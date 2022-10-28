@@ -55,11 +55,11 @@ struct PLUGIN_API tMusicTrackHistory {
 class PLUGIN_API CAERadioTrackManager {
 public:
     unsigned char field_0;
-    unsigned char field_1;
+    bool m_bDisplayStationName;
     unsigned char field_2;
-    unsigned char field_3;
+    bool _bEnabledInPauseMode;
     unsigned char field_4;
-    unsigned char field_5;
+    bool m_bPauseMode;
     bool m_bRetuneJustStarted;
     bool m_bRadioAutoSelect;
     char field_8[14];
@@ -71,7 +71,7 @@ public:
     int field_58;
     int field_5C;
     int field_60;
-    int field_64;
+    int m_nChannel;
     int field_68;
     int m_nStationsListed;
     int m_nStationsListDown;
@@ -94,6 +94,7 @@ public:
     char *GetRadioStationName(signed char id);
     void StartRadio(int stationId, float bass, int arg, char unused);
     void StopRadio(tVehicleAudioSettings* settings, char arg);
+    void UpdateRadioVolumes();
 
     // 11 structures
     static tMusicTrackHistory *m_nMusicTrackIndexHistory;
