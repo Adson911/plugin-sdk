@@ -63,6 +63,9 @@ public:
 
 public:
     int GetActiveTrackID();
+    void SetChannelFlags(short channel, ushort channelId, short flags);
+    void StartTrackPlayback();
+    void SetChannelFrequencyScalingFactor(short channel, ushort channelId, float factor);
 };
 
 VALIDATE_SIZE(CAEAudioHardware, 0x1018);
