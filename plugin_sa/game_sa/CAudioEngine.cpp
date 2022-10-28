@@ -88,3 +88,11 @@ bool CAudioEngine::IsVehicleRadioActive() {
 void CAudioEngine::InitialisePostLoading() {
     plugin::CallMethod<0x5078F0, CAudioEngine*>(this);
 }
+
+bool CAudioEngine::IsAmbienceRadioActive() {
+    return plugin::CallMethodAndReturn<bool, 0x507210, CAudioEngine*>(this);
+}
+
+void CAudioEngine::GetRadioStationNameKey(char stationId, char* outStr) {
+    plugin::CallMethod<0x507010, CAudioEngine*, char, char*>(this, stationId, outStr);
+}

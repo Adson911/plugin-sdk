@@ -57,6 +57,8 @@ public:
     char GetCurrentRadioStationID();
     bool IsVehicleRadioActive();
     void InitialisePostLoading();
+    bool IsAmbienceRadioActive();
+    void GetRadioStationNameKey(char stationId, char* outStr);
 };
 
 VALIDATE_SIZE(CAudioEngine, 0x1FD8);
